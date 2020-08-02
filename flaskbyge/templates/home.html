@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% for post in posts %}
+        .
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='product_pics/' + post.pic) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+                    <small class="text-muted">{{ post.date_posted }}</small>
+                    <small class="text-muted">{{ post.zone }}</small>
+                </div>
+        <table style="width:100%">
+            <tr>
+                <th><a class="article-title" href="#">{{ post.pic }}</a></th>
+                <th>{{ post.discription }}</th>
+                <th>{{ post.zone }}</th>
+                <th>{{ post.price }}</th>
+            </tr>
+            </div>
+        </table>
+    {% endfor  %}
+{% endblock content %}
+
